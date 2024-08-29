@@ -4,22 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class OrderListRepo {
-    List<Order> orders;
+public class OrderListRepo implements OrderRepoInterface{
+    private List<Order> orders;
 
     public OrderListRepo() {
         orders = new ArrayList<>();
     }
 
+    @Override
     public void add(Order order) {
         orders.add(order );
         System.out.println(order + " added");
     }
+
+    @Override
     public void removeOrder(Order order) {
         orders.remove(order);
         System.out.println(order + " removed");
     }
-    public void getOrderId(int id){
+
+    @Override
+    public void getOrderId(int id) {
         for(Order order : orders){
             if (id == order.id()){
                 System.out.println(order);
@@ -27,7 +32,9 @@ public class OrderListRepo {
             }
         }
     }
-    public void getAll(){
+
+    @Override
+    public void getAll() {
         for(Order order : orders){
             System.out.println(orders);
         }

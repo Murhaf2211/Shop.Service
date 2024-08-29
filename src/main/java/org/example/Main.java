@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -42,6 +44,13 @@ public class Main {
         orderRepo.removeOrder(order2);
         System.out.println("----------");
         orderRepo.getOrderId(11);
+        System.out.println("----------");
+        System.out.println("----------");
+        ShopService shopService = new ShopService(repo, orderRepo);
+        Order order = new Order(33, "z334","22.06.2023",product5,2);
+        shopService.placeOrder(order);
+        System.out.println("----------");
+        System.out.println(shopService);
 
     }
 }

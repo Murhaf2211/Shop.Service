@@ -8,4 +8,7 @@ public record Order(
         String dateOfOrder,
         Product product,
         int quantity) {
+    public List<Product> products() {
+        return List.of(product);
+    }
 }

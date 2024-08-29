@@ -16,13 +16,14 @@ public class ProductRepo {
         products.remove(product);
         System.out.println(product + " removed");
     }
-    public void getById(int id){
+    public boolean getById(int id){
         for(Product product : products){
             if (id == product.id()){
                 System.out.println(product);
                 break;
             }
         }
+        return false;
     }
     public void getAll(){
         for(Product product : products){
